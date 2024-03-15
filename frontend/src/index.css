@@ -1,68 +1,125 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@charset "UTF-8";
+@import url("@fremtind/jkl-core/core.min.css");
+@import url("@fremtind/jkl-webfonts/webfonts.min.css");
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: "Fremtind Grotesk";
+    font-display: fallback;
+    font-weight: 400;
+    font-style: normal;
+    src:
+        url("/static/fonts/FremtindGrotesk-Regular-Web.woff2") format("woff2"),
+        url("/static/fonts/FremtindGrotesk-Regular-Web.woff") format("woff");
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+@font-face {
+    font-family: "Adjusted Arial Fallback";
+    font-weight: 400;
+    font-style: normal;
+    src: local(arial);
+    size-adjust: 104%;
+    ascent-override: 82%;
+    descent-override: normal;
+    line-gap-override: 32%;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+@font-face {
+    font-family: "Fremtind Grotesk";
+    font-display: fallback;
+    font-weight: 700;
+    font-style: normal;
+    src:
+        url("/static/fonts/FremtindGrotesk-Bold-Web.woff2") format("woff2"),
+        url("/static/fonts/FremtindGrotesk-Bold-Web.woff") format("woff");
+}
+@font-face {
+    font-family: "Adjusted Arial Fallback";
+    font-weight: 700;
+    font-style: normal;
+    src: local(arial);
+    size-adjust: 108%;
+    ascent-override: 83%;
+    descent-override: normal;
+    line-gap-override: 28%;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+@font-face {
+    font-family: "Fremtind Grotesk";
+    font-display: fallback;
+    font-weight: 400;
+    font-style: italic;
+    src:
+        url("/static/fonts/FremtindGrotesk-Italic-Web.woff2") format("woff2"),
+        url("/static/fonts/FremtindGrotesk-Italic-Web.woff") format("woff");
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+@font-face {
+    font-family: "Adjusted Arial Fallback";
+    font-weight: 400;
+    font-style: italic;
+    src: local(arial);
+    size-adjust: 106%;
+    ascent-override: 83%;
+    descent-override: normal;
+    line-gap-override: 28%;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+@font-face {
+    font-family: "Fremtind Grotesk";
+    font-display: fallback;
+    font-weight: 700;
+    font-style: italic;
+    src:
+        url("/static/fonts/FremtindGrotesk-BoldItalic-Web.woff2")
+            format("woff2"),
+        url("/static/fonts/FremtindGrotesk-BoldItalic-Web.woff") format("woff");
+}
+@font-face {
+    font-family: "Adjusted Arial Fallback";
+    font-weight: 700;
+    font-style: italic;
+    src: local(arial);
+    size-adjust: 108%;
+    ascent-override: 83%;
+    descent-override: normal;
+    line-gap-override: 28%;
+}
+
+@font-face {
+    font-family: "Fremtind Grotesk Display";
+    font-display: fallback;
+    font-weight: 400;
+    font-style: normal;
+    src:
+        url("/static/fonts/FremtindGrotesk-Display-Web.woff2") format("woff2"),
+        url("/static/fonts/FremtindGrotesk-Display-Web.woff") format("woff");
+}
+@font-face {
+    font-family: "Adjusted Arial Display Fallback";
+    font-weight: 400;
+    font-style: normal;
+    src: local(arial);
+    size-adjust: 102%;
+    ascent-override: 76%;
+    descent-override: normal;
+    line-gap-override: 40%;
+}
+
+@font-face {
+    font-family: "Fremtind Grotesk Mono";
+    font-display: fallback;
+    font-weight: 400;
+    font-style: normal;
+    src:
+        url("/static/fonts/FremtindGroteskMono-Regular-Web.woff2")
+            format("woff2"),
+        url("/static/fonts/FremtindGroteskMono-Regular-Web.woff") format("woff");
+}
+@font-face {
+    font-family: "Adjusted Courier New Fallback";
+    font-weight: 400;
+    font-style: normal;
+    src: local(courier new);
+    size-adjust: 100%;
+    ascent-override: 83%;
+    descent-override: normal;
+    line-gap-override: 27%;
 }
