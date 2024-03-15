@@ -9,5 +9,11 @@ extern "C" {
 
 #[wasm_bindgen]
 pub fn greet() {
-    alert("Hello, wasm-hackathon!");
+    let name = "Rust";
+    alert(&format!("Hello, {}!", name));
+}
+
+#[wasm_bindgen]
+pub fn add(a: i32, b: i32) -> i32 {
+    a + b
 }
