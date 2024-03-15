@@ -1,37 +1,57 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import { add } from "wasm-hackathon";
+import { useState } from 'react'
+import './App.css'
+import {
+	validate_email as validateEmail,
+	validate_age as validateAge,
+	validate_name as validateName,
+} from 'wasm-hackathon'
+import { TextInput } from '@fremtind/jkl-text-input-react'
 
 function App() {
-  const [count, setCount] = useState(0);
+	const [email, setEmail] = useState('')
+	const [age, setAge] = useState('')
+	const [name, setName] = useState('')
 
-  console.log(add(100, 2));
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  );
+	return (
+		<>
+			<main>
+				<h1>Rust + React</h1>
+				<section>
+					<TextInput
+						label='Epostvalidering'
+						placeholder='Skriv inn epost'
+						errorLabel={
+							validateEmail(email) === 'Ugyldig epostadresse' &&
+							validateEmail(email)
+						}
+						value={email}
+						onChange={e => setEmail(e.target.value)}
+					/>
+					<TextInput
+						label='Alderssjekk'
+						placeholder='Skriv inn alder'
+						errorLabel={
+							validateAge(Number(age)) === 'Du er for ung' &&
+							validateAge(Number(age))
+						}
+						value={age}
+						onChange={e => setAge(e.target.value)}
+						type='number'
+					/>
+					<TextInput
+						label='Navn'
+						placeholder='Skriv inn navn'
+						value={name}
+						onChange={e => setName(e.target.value)}
+						errorLabel={
+							validateName(name) === 'Ugyldig navn' &&
+							validateName(name)
+						}
+					/>
+				</section>
+			</main>
+		</>
+	)
 }
 
-export default App;
+export default App
