@@ -3,17 +3,29 @@ mod utils;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-extern "C" {
-    fn alert(s: &str);
+pub fn validate_name(name: &str) -> String {
+    if name.len() > 3 {
+        return format!("Gyldig navn");
+    } else {
+        return format!("Ugyldig navn");
+    }
 }
 
 #[wasm_bindgen]
-pub fn greet() {
-    let name = "Rust";
-    alert(&format!("Hello, {}!", name));
+pub fn validate_email(email: &str) -> String {
+    if email.contains("@fremtind.no") {
+        return format!("Gyldig epostadresse");
+    } else {
+        return format!("Ugyldig epostadresse");
+    }
 }
 
+
 #[wasm_bindgen]
-pub fn add(a: i32, b: i32) -> i32 {
-    a + b
+pub fn validate_age(age: i32) -> String {
+    if age > 18 {
+        return format!("Du er gammel nok");
+    } else {
+        return format!("Du er for ung");
+    }
 }
