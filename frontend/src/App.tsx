@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import {
 	validate_email as validateEmail,
@@ -16,6 +16,58 @@ function App() {
 		<>
 			<main>
 				<h1 className='jkl-title'>Rust + React</h1>
+				<section
+					style={{
+						position: 'absolute',
+						top: '50%',
+						left: '10%',
+						transform: 'translateY(-50%)',
+					}}
+				>
+					<p
+						style={{
+							padding: '1rem 2rem',
+							borderRadius: '0.4rem',
+							fontWeight: 'bold',
+							fontSize: '1.25rem',
+							background:
+								validateEmail(email) === 'Ugyldig epostadresse'
+									? '#EF959C'
+									: '#94A89A',
+						}}
+					>
+						Epost : {validateEmail(email)}
+					</p>
+					<p
+						style={{
+							padding: '1rem 2rem',
+							borderRadius: '0.4rem',
+							fontWeight: 'bold',
+							fontSize: '1.25rem',
+							background:
+								validateAge(Number(age)) === 'Du er for ung'
+									? '#EF959C'
+									: '#94A89A',
+						}}
+					>
+						Alder : {validateAge(Number(age))}
+					</p>
+
+					<p
+						style={{
+							padding: '1rem 2rem',
+							borderRadius: '0.4rem',
+							fontWeight: 'bold',
+							fontSize: '1.25rem',
+							background:
+								validateName(name) === 'Ugyldig navn'
+									? '#EF959C'
+									: '#94A89A',
+						}}
+					>
+						Navn : {validateName(name)}
+					</p>
+				</section>
 				<section>
 					<TextInput
 						label='Epostvalidering'
