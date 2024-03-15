@@ -15,7 +15,7 @@ function App() {
 	return (
 		<>
 			<main>
-				<h1>Rust + React</h1>
+				<h1 className='jkl-title'>Rust + React</h1>
 				<section>
 					<TextInput
 						label='Epostvalidering'
